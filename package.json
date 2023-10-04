@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "@types/node": "20.8.2",
+    "openai": "^4.11.1",
+    "playwright": "^1.38.1",
     "ts-node": "10.9.1",
     "typescript": "5.2.2"
   },
