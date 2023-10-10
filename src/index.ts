@@ -216,18 +216,21 @@ const createPageEvidence = async (investigation: any) => {
 
 const actions = [initInvestigation, preformSiteSearch];
 
+const userQuestion = "What is the Status of Red Cross? https://www.charities.gov.sg/Pages/AdvanceSearch.aspx";
+// const userQuestion = "Verify ‘Leslie Toth’ can be found on the ASC website. https://www.asc.ca/en/enforcement/notices-decisions-and-orders";
+// const userQuestion = "Verify ‘Husam Alrubaye’ can be found on the ASC website search results. https://www.asc.ca/en/enforcement/notices-decisions-and-orders";
+// const userQuestion = "What is the Status of Red Cross? https://www.charities.gov.sg/Pages/AdvanceSearch.aspx";
+// const userQuestion = "What is the review of starbucks on 99 jackson st, San Francisco, CA 94111, USA? yelp";
+// const userQuestion = "How many subscribers does MrBeast has on youtube?";
+// const userQuestion = "What fun things todo in San Francisco on tuesday?";
+// const userQuestion = "Verify this ebay listing with id 144944083778 has white color options available";
+
 (async () => {
   await initBrowser();
 
   const userPrompt: ChatCompletionMessageParam = {
     role: GPT_MESSAGE_ROLE.USER,
-    // content: "Verify ‘Leslie Toth’ can be found on the ASC website. https://www.asc.ca/en/enforcement/notices-decisions-and-orders",
-    // content: "Verify ‘Husam Alrubaye’ can be found on the ASC website search results. https://www.asc.ca/en/enforcement/notices-decisions-and-orders",
-    content: "What is the Status of Red Cross? https://www.charities.gov.sg/Pages/AdvanceSearch.aspx",
-    // content: "What is the review of starbucks on 99 jackson st, San Francisco, CA 94111, USA? yelp",
-    // content: "How many subscribers does MrBeast has on youtube?",
-    // content: "What fun things todo in San Francisco on tuesday?",
-    // content: "Verify this ebay listing with id 144944083778 has white color options available",
+    content: userQuestion,
   };
 
   let currentActionIndex = 0;
