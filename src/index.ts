@@ -1,9 +1,9 @@
 import { type Page, chromium, Browser } from "playwright";
 import { ChatCompletionCreateParams, ChatCompletionMessageParam } from "openai/resources/chat";
 
-import { getAllInputFields, htmlToText, sleep } from "./utils";
-import { GPT_FUNCTIONS, GPT_MESSAGE_ROLE } from "./constants";
 import { gptRequest } from "./openAi";
+import { GPT_FUNCTIONS, GPT_MESSAGE_ROLE } from "./constants";
+import { getAllInputFields, htmlToText, sleep } from "./utils";
 
 let pageInstance: Page = null;
 let browserInstance: Browser = null;
