@@ -1,19 +1,23 @@
 {
-  "name": "typescript-node",
+  "name": "self-browsing-browser",
   "version": "1.0.0",
-  "description": "TypeScript Template with Node.js",
-  "main": "src/index.js",
+  "description": "Searching Online Databases with a Self-Browsing Browser",
+  "main": "src/index.ts",
   "scripts": {
-    "start": "nodemon --exec 'ts-node' src/index.ts localhost 8080"
+    "start": "nodemon -r dotenv/config --exec 'ts-node' src/index.ts localhost 8080"
   },
   "dependencies": {
     "@types/node": "20.8.2",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.1",
+    "html-to-text": "^9.0.5",
     "openai": "^4.11.1",
     "playwright": "^1.38.1",
     "ts-node": "10.9.1",
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@types/html-to-text": "^9.0.2",
     "nodemon": "3.0.1"
   },
   "keywords": []
