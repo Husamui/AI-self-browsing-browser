@@ -49,6 +49,14 @@ const baseFunctions: ChatCompletionCreateParams.Function[] = [
   },
 ];
 
+/**
+ *
+ * @param userPrompt: ChatCompletionMessageParam contain the user question that the assistant need to answer.
+ * @param nextMessages: A list of history messages that will be sent to the assistant as context.
+ * @param attempt: The number of retries the function was called recursively.
+ * @returns Once the assistant goes through all functions calls will return a investigation object with the answer to the user question if found.
+ */
+
 const initInvestigation = async (userPrompt: ChatCompletionMessageParam, nextMessages: ChatCompletionMessageParam[] = [], attempt = 1) => {
   let findDataOnWebChatMessage: ChatCompletionMessageParam = {
     role: GPT_MESSAGE_ROLE.SYSTEM,
@@ -115,6 +123,13 @@ const initInvestigation = async (userPrompt: ChatCompletionMessageParam, nextMes
   }
 };
 
+/**
+ *
+ * @param userPrompt: ChatCompletionMessageParam contain the user question that the assistant need to answer.
+ * @param nextMessages: A list of history messages that will be sent to the assistant as context.
+ * @param attempt: The number of retries the function was called recursively.
+ * @returns Once the assistant goes through all functions calls will return a investigation object with the answer to the user question if found.
+ */
 const preformSiteSearch = async (userPrompt: ChatCompletionMessageParam, nextMessages: ChatCompletionMessageParam[] = [], attempt = 1) => {
   let preformSiteSearchChatMessage: ChatCompletionMessageParam = {
     role: GPT_MESSAGE_ROLE.SYSTEM,
@@ -210,20 +225,36 @@ const preformSiteSearch = async (userPrompt: ChatCompletionMessageParam, nextMes
   }
 };
 
+/**
+ * Create a page evidence in the database.
+ * @param investigation
+ * @returns void
+ * @example
+ * createPageEvidence({
+ * primaryUrl: "https://www.charities.gov.sg/Pages/AdvanceSearch.aspx",
+ * secondaryUrl: "hhttps://www.charities.gov.sg/_layouts/15/CPInternet/SearchOrgProfile.aspx?q=ZGY0Y2FmZDMtNzk2NS1lMzExLThmZGEtMDA1MDU2YjMwNDg1",
+ * found: true,
+ * answer: "Red Cross is a registered charity with IPC status.",
+ * });
+ **/
 const createPageEvidence = async (investigation: any) => {
+  // TODO: create page evidence in the database.
   console.log("create_page_evidence", investigation);
 };
 
+/**
+ * A list of actions ChatGpt to preform to find the answer to the user question.
+ */
 const actions = [initInvestigation, preformSiteSearch];
 
-const userQuestion = "What is the Status of Red Cross? https://www.charities.gov.sg/Pages/AdvanceSearch.aspx";
+// const userQuestion = "What is the Status of Red Cross? https://www.charities.gov.sg/Pages/AdvanceSearch.aspx";
 // const userQuestion = "Verify ‘Leslie Toth’ can be found on the ASC website. https://www.asc.ca/en/enforcement/notices-decisions-and-orders";
 // const userQuestion = "Verify ‘Husam Alrubaye’ can be found on the ASC website search results. https://www.asc.ca/en/enforcement/notices-decisions-and-orders";
 // const userQuestion = "What is the Status of Red Cross? https://www.charities.gov.sg/Pages/AdvanceSearch.aspx";
 // const userQuestion = "What is the review of starbucks on 99 jackson st, San Francisco, CA 94111, USA? yelp";
 // const userQuestion = "How many subscribers does MrBeast has on youtube?";
 // const userQuestion = "What fun things todo in San Francisco on tuesday?";
-// const userQuestion = "Verify this ebay listing with id 144944083778 has white color options available";
+const userQuestion = "Verify this ebay listing with id 144944083778 has red color available";
 
 (async () => {
   await initBrowser();
