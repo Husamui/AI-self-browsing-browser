@@ -247,14 +247,13 @@ const createPageEvidence = async (investigation: any) => {
  */
 const actions = [initInvestigation, preformSiteSearch];
 
-// const userQuestion = "What is the Status of Red Cross? https://www.charities.gov.sg/Pages/AdvanceSearch.aspx";
+const userQuestion = "What is the Status of Red Cross? https://www.charities.gov.sg/Pages/AdvanceSearch.aspx";
 // const userQuestion = "Verify ‘Leslie Toth’ can be found on the ASC website. https://www.asc.ca/en/enforcement/notices-decisions-and-orders";
 // const userQuestion = "Verify ‘Husam Alrubaye’ can be found on the ASC website search results. https://www.asc.ca/en/enforcement/notices-decisions-and-orders";
 // const userQuestion = "What is the Status of Red Cross? https://www.charities.gov.sg/Pages/AdvanceSearch.aspx";
 // const userQuestion = "What is the review of starbucks on 99 jackson st, San Francisco, CA 94111, USA? yelp";
 // const userQuestion = "How many subscribers does MrBeast has on youtube?";
 // const userQuestion = "What fun things todo in San Francisco on tuesday?";
-const userQuestion = "Verify this ebay listing with id 144944083778 has red color available";
 
 (async () => {
   await initBrowser();
