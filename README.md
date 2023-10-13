@@ -14,7 +14,7 @@ Built with NodeJS, Typescript, OpenAI Chat GPT-3.5-turbo +, Playwright and Cheer
 - 🔍 If data not found preform website internal search. by first finding the search box and type in it, submit it and extract data from the result page.
 - 🔧 Expandable actions to be added to the bot. current capability is to extract data from webpage and preform search and extract data from search result page.
 ## Next actions to be added
-- 👆 Click on the page and extract data from the new page.
+- 👆 Click on the page elements (buttons, links...) and extract data from the new page.
 - ↕️ Scroll down and extract data from the new page.
 - 📝 Fill out form and submit it.
 - 🗂️ Download files and extract data from them.
@@ -24,7 +24,7 @@ Built with NodeJS, Typescript, OpenAI Chat GPT-3.5-turbo +, Playwright and Cheer
 
 ## Getting started
 
-To get started with this project, run
+To get started with this project, clone the repo and run the following commands:
 
 ```bash
 git clone https://github.com/Husamui/AI-self-browsing-browser.git
@@ -36,8 +36,7 @@ Copy the .env.example into .env file, fill them out!
 cp .env.example .env
 ```
 
-
-install packages
+Install packages
 ```bash
 npm i
 ```
