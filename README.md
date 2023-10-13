@@ -37,3 +37,8 @@ install packages
 ```bash
 npm i
 ```
+
+Run project
+```bash
+npm start
+```
