@@ -17,10 +17,10 @@ Built with NodeJS, Typescript, OpenAI Chat GPT-3.5-turbo +, Playwright and Cheer
 - 👆 Click on the page and extract data from the new page.
 - ↕️ Scroll down and extract data from the new page.
 - 📝 Fill out form and submit it.
-- 🗂️ Download files and extract data from it.
+- 🗂️ Download files and extract data from them.
 - 🧪 Experiment with vector search to find the most relevant data to the question.
 - 🔗 Experiment with LangChain
-- 🎛️ parallel actions
+- 🎛️ Parallel actions
 
 ## Getting started
 
@@ -30,7 +30,11 @@ To get started with this project, run
 git clone https://github.com/Husamui/AI-self-browsing-browser.git
 ```
 
-Copy the .env.example variables into a separate .env file, fill them out!
+Copy the .env.example into .env file, fill them out!
+
+```bash
+cp .env.example .env
+```
 
 
 install packages
